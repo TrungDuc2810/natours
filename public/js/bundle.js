@@ -8528,8 +8528,8 @@
           try {
             const r =
               'password' === e
-                ? 'http://127.0.0.1:3000/api/v1/users/updateMyPassword'
-                : 'http://127.0.0.1:3000/api/v1/users/updateMe';
+                ? '/api/v1/users/updateMyPassword'
+                : '/api/v1/users/updateMe';
             'success' ===
               (await Gt({ method: 'PATCH', url: r, data: t })).data.status &&
               zt('success', `${e.toUpperCase()} updated succesfully!`);
@@ -8673,7 +8673,7 @@
                     (
                       await Gt({
                         method: 'POST',
-                        url: 'http://127.0.0.1:3000/api/v1/users/login',
+                        url: '/api/v1/users/login',
                         data: { email: t, password: e },
                       })
                     ).data.status &&
@@ -8693,10 +8693,7 @@
           ie.addEventListener('click', async () => {
             try {
               ((
-                await Gt({
-                  method: 'GET',
-                  url: 'http://127.0.0.1:3000/api/v1/users/logout',
-                })
+                await Gt({ method: 'GET', url: '/api/v1/users/logout' })
               ).data.status = 'success') && location.reload(!0);
             } catch (t) {
               console.log(t.response),
@@ -8736,9 +8733,7 @@
             const { tourId: e } = t.target.dataset;
             (async (t) => {
               try {
-                const e = await Gt(
-                  `http://127.0.0.1:3000/api/v1/bookings/checkout-session/${t}`,
-                );
+                const e = await Gt(`/api/v1/bookings/checkout-session/${t}`);
                 (
                   await (function () {
                     for (
@@ -8772,7 +8767,7 @@
                   )
                 ).redirectToCheckout({ sessionId: e.data.session.id });
               } catch (t) {
-                zt('error', t);
+                console.log(t), zt('error', t);
               }
             })(e);
           });
