@@ -2568,7 +2568,14 @@ mkdirp@^0.5.4:
   dependencies:
     minimist "^1.2.6"
 
-mongodb@3.7.4:
+mongo@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.npmjs.org/mongo/-/mongo-0.1.0.tgz"
+  integrity sha512-2MPq+GCNKhah0V/g/HIQI/S1h6Ycd87KPuXAITkeXWT6wncvABFxOaXdzCKlRvLSQRUkDimllrRrhoHUTD8usg==
+  dependencies:
+    mongodb "*"
+
+mongodb@*, mongodb@3.7.4:
   version "3.7.4"
   resolved "https://registry.npmjs.org/mongodb/-/mongodb-3.7.4.tgz"
   integrity sha512-K5q8aBqEXMwWdVNh94UQTwZ6BejVbFhh1uB6c5FKtPE9eUMZPUO3sRZdgIEcHSrAWmxzpG/FeODDKL388sqRmw==
